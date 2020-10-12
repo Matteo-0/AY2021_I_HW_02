@@ -9,20 +9,20 @@
 */
 
 #include "InterruptRoutines.h"
-#define PWMClockFrequency 30000                                 // define the clock frequency of the PWM
+#define PWMClockFrequency 30000                                  // define the clock frequency of the PWM
 
 CY_ISR(ButtonPressed_ISR)
 {
-    CyDelay(500);                                               // Delay of 1/2 second before entering the next configuration
-    count++;
+    count++;                                                    // count in incremented each time we click the button
+    CyDelay(50);                                                // Delay of 20 ms before entering the next configuration
 
         switch (count)                                          // Each time I click the button I will enter a different configuration 
         {
             case (1):
-            PWM_RedLed_WriteCompare(2*PWMClockFrequency);       // Sets how much time the wave driving the Red channel stay high with respect to the whole period
-            PWM_GreenLed_WriteCompare(2*PWMClockFrequency);     // Sets how much time the wave driving the Green channel stay high with respect to the whole period 
-            PWM_RedLed_SetCompareMode(3);                       // Sets if the wave driving the Red channel start with a low or high value
-            PWM_GreenLed_SetCompareMode(3);                     // Sets if the wave driving the Green channel start with a low or high value
+            PWM_RedLed_WriteCompare(2*PWMClockFrequency);       // Sets how much time the wave, driving the Red channel, stays high with respect to the whole period
+            PWM_GreenLed_WriteCompare(2*PWMClockFrequency);     // Sets how much time the wave, driving the Green channel, stays high with respect to the whole period 
+            PWM_RedLed_SetCompareMode(3);                       // Sets if the wave, driving the Red channel, starts with a low or high value
+            PWM_GreenLed_SetCompareMode(3);                     // Sets if the wave, driving the Green channel, starts with a low or high value
             PWM_RedLed_WritePeriod(2*PWMClockFrequency);        // Sets the period value used by the PWM hardware for the Red channel
             PWM_GreenLed_WritePeriod(2*PWMClockFrequency);      // Sets the period value used by the PWM hardware for the Green channel
             break;
