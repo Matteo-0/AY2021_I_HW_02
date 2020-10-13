@@ -2,7 +2,7 @@
 *   \file InterruptRoutines.h
 *   \Brief InterruptRoutines source file for the second assignment.
 *
-*   In this file there is the declaration of the function.
+*   In this file there is the declaration of the function and of the global variable.
 *
 *   Author: Matteo Boles
 *   Date: October 13, 2020

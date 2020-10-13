@@ -9,12 +9,12 @@
 */
 
 #include "InterruptRoutines.h"
-#define PWMClockFrequency 30000                                  // define the clock frequency of the PWM
+#define PWMClockFrequency 30000                                 // define the clock frequency of the PWM
 
 CY_ISR(ButtonPressed_ISR)
 {
     count++;                                                    // count in incremented each time we click the button
-    CyDelay(50);                                                // Delay of 20 ms before entering the next configuration
+    CyDelay(50);                                                // Delay of 50 ms before entering the next configuration
 
         switch (count)                                          // Each time I click the button I will enter a different configuration 
         {
